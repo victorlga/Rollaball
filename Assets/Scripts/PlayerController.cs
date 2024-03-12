@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     // Speed at which the player moves.
     public float speed = 0;
+    
+    // UI text component to display count of "PickUp" objects collected.
+    public TextMeshProUGUI countText;
 
     // Rigidbody of the player.
     private Rigidbody rb;
+
+     // Variable to keep track of collected "PickUp" objects.
+    private int count;
 
     // Movement along X and Y axes.
     private float movementX;
@@ -20,6 +27,12 @@ public class PlayerController : MonoBehaviour
     {
         // Get and store the Rigidbody component attached to the player.
         rb = GetComponent <Rigidbody>();
+
+        // Initialize count to zero.
+        count = 0;
+
+        // Update the count display.
+        SetCountText();
     }
 
     // This function is called when a move input is detected.
@@ -31,6 +44,11 @@ public class PlayerController : MonoBehaviour
         // Store the X and Y componenets of the movement.
         movementX = movementVector.x;
         movementY = movementVector.y;
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
     }
 
     // FixedUpdate is called once per fixed frame-rate frame.
@@ -50,6 +68,11 @@ public class PlayerController : MonoBehaviour
         {
             // Deactivate the collided object (making it disappear).
             other.gameObject.SetActive(false);
+            
+            // Increment the count of "PickUp" objects collected.
+            count = count + 1;
+            // Update the count display.
+            SetCountText();
         }
     }
 
