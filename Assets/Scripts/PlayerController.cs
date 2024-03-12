@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     // UI text component to display count of "PickUp" objects collected.
     public TextMeshProUGUI countText;
 
+    public GameObject winTextObject;
+
     // Rigidbody of the player.
     private Rigidbody rb;
 
@@ -30,9 +32,10 @@ public class PlayerController : MonoBehaviour
 
         // Initialize count to zero.
         count = 0;
-
         // Update the count display.
         SetCountText();
+
+        winTextObject.SetActive(false);
     }
 
     // This function is called when a move input is detected.
@@ -49,6 +52,11 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
+
+        if (count >= 8)
+        {
+            winTextObject.SetActive(true);
+        }
     }
 
     // FixedUpdate is called once per fixed frame-rate frame.
