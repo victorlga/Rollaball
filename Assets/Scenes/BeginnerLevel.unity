@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 2101668864}
   m_Layer: 0
   m_Name: PickUp Parent
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2267,7 +2267,7 @@ PrefabInstance:
     - target: {fileID: 8568042615785009579, guid: 13ffb323c9c55d59ca90a2031479c406,
         type: 3}
       propertyPath: m_Name
-      value: PickUp
+      value: PickUp (0)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
