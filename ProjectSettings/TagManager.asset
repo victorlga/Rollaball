@@ -8,6 +8,7 @@ TagManager:
   - BeginnerLevel
   - AdvancedLevel
   - Quit
+  - FallDetector
   layers:
   - Default
   - TransparentFX

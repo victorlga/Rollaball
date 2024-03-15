@@ -64,5 +64,9 @@ public class SelectorController : MonoBehaviour
                 Application.Quit(); // Quit the application
             #endif
         }
+        else if (other.gameObject.CompareTag("FallDetector"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

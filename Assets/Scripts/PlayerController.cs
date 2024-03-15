@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     // Speed at which the player moves.
     public float speed = 0;
-    
-    // UI text component to display count of "PickUp" objects collected.
-    public TextMeshProUGUI countText;
 
     public GameObject winTextObject;
 
     // Rigidbody of the player.
     private Rigidbody rb;
 
-     // Variable to keep track of collected "PickUp" objects.
+    // Variable to keep track of collected "PickUp" objects.
     private int count;
 
     // Movement along X and Y axes.
@@ -32,8 +30,6 @@ public class PlayerController : MonoBehaviour
 
         // Initialize count to zero.
         count = 0;
-        // Update the count display.
-        SetCountText();
 
         winTextObject.SetActive(false);
     }
@@ -47,16 +43,6 @@ public class PlayerController : MonoBehaviour
         // Store the X and Y componenets of the movement.
         movementX = movementVector.x;
         movementY = movementVector.y;
-    }
-
-    void SetCountText()
-    {
-        countText.text = "Count: " + count.ToString();
-
-        if (count >= 8)
-        {
-            winTextObject.SetActive(true);
-        }
     }
 
     // FixedUpdate is called once per fixed frame-rate frame.
@@ -79,8 +65,17 @@ public class PlayerController : MonoBehaviour
             
             // Increment the count of "PickUp" objects collected.
             count = count + 1;
-            // Update the count display.
-            SetCountText();
+            if (count >= 8)
+            {
+                winTextObject.SetActive(true);
+            }
+
+            // Add 5 seconds to the timer
+            Timer.Instance.timeRemaining += 2.0f;
+        }
+        else if (other.gameObject.CompareTag("FallDetector"))
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 
