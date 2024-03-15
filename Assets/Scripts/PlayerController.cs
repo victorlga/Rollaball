@@ -68,14 +68,15 @@ public class PlayerController : MonoBehaviour
             if (count >= 10)
             {
                 winTextObject.SetActive(true);
+                Timer.Instance.textIsActive = false;
+                Timer.Instance.timeRemaining = 3.0f;
+            }
+            else
+            {
+                // Add 5 seconds to the timer
+                Timer.Instance.timeRemaining += 2.0f;
             }
 
-            // Add 5 seconds to the timer
-            Timer.Instance.timeRemaining += 2.0f;
-        }
-        else if (other.gameObject.CompareTag("FallDetector"))
-        {
-            SceneManager.LoadScene("Menu");
         }
     }
 

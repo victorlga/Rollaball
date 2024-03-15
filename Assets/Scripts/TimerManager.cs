@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float timeRemaining = 10;
 
+    public bool textIsActive = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -38,8 +40,14 @@ public class Timer : MonoBehaviour
     void SetTimerText()
     {
         // Format the timeRemaining to two decimal places
-        string formattedTime = timeRemaining.ToString("0.##");
-
-        timerText.text = "Time remaining to get all yellows: " + formattedTime;
+        if (textIsActive)
+        {
+            string formattedTime = timeRemaining.ToString("0.##");
+            timerText.text = "Time remaining to get all yellows: " + formattedTime;
+        }
+        else
+        {
+            timerText.text = "";
+        }
     }
 }
