@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
 
     public GameObject winTextObject;
+    public AudioSource audio;
 
     // Rigidbody of the player.
     private Rigidbody rb;
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Add 5 seconds to the timer
                 Timer.Instance.timeRemaining += 2.0f;
+                audio.Play();
             }
 
         }

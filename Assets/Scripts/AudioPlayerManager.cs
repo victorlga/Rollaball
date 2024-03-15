@@ -21,7 +21,7 @@ public class AudioPlayerManager: MonoBehaviour
 
       void Start()
       {
-         audio = GetComponent<AudioSource>();
-         audio.Play();
+        audio = GetComponent<AudioSource>();
+        audio.Play();
       }
 }
