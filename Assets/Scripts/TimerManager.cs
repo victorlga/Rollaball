@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
         if (textIsActive)
         {
             string formattedTime = timeRemaining.ToString("0.##");
-            timerText.text = "Time remaining to get all yellows: " + formattedTime;
+            timerText.text = "Time remaining: " + formattedTime;
         }
         else
         {
