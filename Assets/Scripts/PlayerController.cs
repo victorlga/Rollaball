@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             
             // Increment the count of "PickUp" objects collected.
             count = count + 1;
-            if (count >= 8)
+            if (count >= 10)
             {
                 winTextObject.SetActive(true);
             }
