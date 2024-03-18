@@ -21,7 +21,7 @@ To play the game, clone the repository and open the project in Unity:
 git clone https://github.com/victorlga/rollaball.git
 ```
 
-Or go to my itch.io page:
+Or go to my itch.io page: https://victorlga.itch.io/roll-a-ball-medieval
 
 
 ## Levels
