@@ -1,5 +1,7 @@
 # Roll-a-Ball Game
 
+### By VIctor Luís Gama de Assis
+
 ## Description
 Roll-a-Ball is an exciting and fast-paced game set in a medieval room where the objective is to collect as many cheeses as possible. The game features two difficulty levels: Beginner and Advanced. In the Beginner level, players have 15 seconds to collect all the cheeses in the room. In the Advanced level, the challenge is heightened with only 5 seconds at the start to collect the cheeses. For every cheese collected, an additional 2 seconds are added to the clock.
 
